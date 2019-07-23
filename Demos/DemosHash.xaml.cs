@@ -55,5 +55,18 @@ namespace Demos {
                 consola.Text = ex.Message;
             }
         }
+        private void BtnGeneraPwd_Click(object sender, RoutedEventArgs e) {
+            consola.Text = GetHashPasswordRfc2898(entrada.Text, "Hola") + "\n"; 
+            consola.Text += GetHashPasswordRfc2898(entrada.Text, "Otra") + "\n"; 
+            consola.Text += GetHashPasswordRfc2898(entrada.Text, "Otra", 1000) + "\n"; 
+            consola.Text += GetHashPasswordRfc2898(entrada.Text, "Otra", 1000, 64) + "\n"; 
+        }
+        public string GetHashPasswordRfc2898(string password, string salt, int iterationCount = 100, int lenght = 32) {
+            byte[] pwd = Encoding.UTF8.GetBytes(password);
+            byte[] _salt = Encoding.UTF8.GetBytes(salt.PadRight(8, '0'));
+            var pdb = new Rfc2898DeriveBytes(pwd, _salt, iterationCount);
+            return Convert.ToBase64String(pdb.GetBytes(lenght));
+        }
+
     }
 }

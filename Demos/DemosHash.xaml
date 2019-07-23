@@ -28,6 +28,7 @@
                 <ComboBoxItem Content="SHA512" />
             </ComboBox>
             <Button x:Name="btnGeneraHash" Content="Genera Hash" Click="BtnGeneraHash_Click" />
+            <Button Content="Genera clave" Click="BtnGeneraPwd_Click" />
         </StackPanel>
     </Grid>
 </UserControl>

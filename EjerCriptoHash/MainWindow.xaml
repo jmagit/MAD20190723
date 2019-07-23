@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EjerCriptoHash"
         mc:Ignorable="d"
-        Title="Ejercicio de Hash" Height="450" Width="800">
+        Title="Ejercicio de Hash" Height="450" Width="800" WindowState="Maximized">
     <TabControl>
         <TabItem Header="Muchos">
             <local:Muchos />
