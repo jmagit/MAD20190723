@@ -1,0 +1,45 @@
+﻿<Window x:Class="EjerCriptoCSimetrica.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EjerCriptoCSimetrica"
+        mc:Ignorable="d"
+        Title="Ejercicio de C.Simetricas" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Content="Clave" />
+        <TextBox x:Name="txtClave" Grid.Column="1" TextWrapping="Wrap" Text="AFjsaxkoFGdt1PdR7EdY/v2+m7WkrYqvcSEQ/shy22I=" />
+        <Label Content="IV" Grid.Row="1"/>
+        <TextBox x:Name="txtVector" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="fBE2zJKEs9wVhRNOddqpWw=="/>
+        <Label Content="Entrada"  Grid.Row="2"/>
+        <TextBox x:Name="txtEntrada" Grid.Row="2"  Grid.Column="1" TextWrapping="Wrap" Text="C:\dotnet\Seguridad.net\Curso\EjerCriptoCSimetrica\Fichero.txt" />
+        <Label Content="Salida"  Grid.Row="3"/>
+        <TextBox x:Name="txtSalida" Grid.Row="3"  Grid.Column="1" TextWrapping="Wrap" Text="C:\dotnet\Seguridad.net\Curso\EjerCriptoCSimetrica\Fichero.bin" />
+        <TextBox x:Name="consola" TextWrapping="Wrap" Grid.Row="4" FontSize="14" Grid.ColumnSpan="2" />
+        <StackPanel Grid.Column="2" Grid.RowSpan="5">
+            <ComboBox x:Name="cbAlgoritmos" SelectedIndex="0">
+                <ComboBoxItem Content="Aes" />
+                <ComboBoxItem Content="DES" />
+                <ComboBoxItem Content="RC2" />
+                <ComboBoxItem Content="Rijndael" />
+                <ComboBoxItem Content="TripleDES" />
+            </ComboBox>
+            <Button Content="Crear" Click="BtnCrear_Click" />
+            <Button x:Name="btnEncripta" Content="Encripta" Click="BtnEncripta_Click"  />
+            <Button Content="Desencrita" Click="BtnDesEncripta_Click"  />
+            <Button Content="Renombra" Click="BtnRenombra_Click"  />
+        </StackPanel>
+    </Grid>
+</Window>

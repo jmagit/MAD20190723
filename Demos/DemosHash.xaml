@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
         <TextBox x:Name="entrada" TextWrapping="Wrap" Text="Hola mundo" />
         <TextBox x:Name="consola" TextWrapping="Wrap" Grid.Row="1" FontSize="14" />
-       <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="1">
             <Button x:Name="btnAleatorio" Content="Aleatorio" Click="BtnAleatorio_Click" />
             <ComboBox x:Name="cbAlgoritmos" SelectedIndex="0">
                 <ComboBoxItem Content="MD5" />
@@ -29,6 +29,9 @@
             </ComboBox>
             <Button x:Name="btnGeneraHash" Content="Genera Hash" Click="BtnGeneraHash_Click" />
             <Button Content="Genera clave" Click="BtnGeneraPwd_Click" />
+            <Button Content="View" Click="btnVerPwd" />
+            <Button Content="Protected" Click="btnProtectedPwd" />
+            <Button Content="UnProtected" Click="btnDesProtectedPwd" />
         </StackPanel>
     </Grid>
 </UserControl>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demos", "Demos\Demos.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjerCriptoHash", "EjerCriptoHash\EjerCriptoHash.csproj", "{780BF901-B744-41DC-B754-3A657FA6B268}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjerCriptoCSimetrica", "EjerCriptoCSimetrica\EjerCriptoCSimetrica.csproj", "{D263CCEC-54B5-483F-B1FC-4BA50B017A69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{780BF901-B744-41DC-B754-3A657FA6B268}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{780BF901-B744-41DC-B754-3A657FA6B268}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{780BF901-B744-41DC-B754-3A657FA6B268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D263CCEC-54B5-483F-B1FC-4BA50B017A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D263CCEC-54B5-483F-B1FC-4BA50B017A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D263CCEC-54B5-483F-B1FC-4BA50B017A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D263CCEC-54B5-483F-B1FC-4BA50B017A69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
