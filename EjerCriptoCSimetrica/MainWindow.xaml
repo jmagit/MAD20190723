@@ -24,9 +24,9 @@
         <Label Content="IV" Grid.Row="1"/>
         <TextBox x:Name="txtVector" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="fBE2zJKEs9wVhRNOddqpWw=="/>
         <Label Content="Entrada"  Grid.Row="2"/>
-        <TextBox x:Name="txtEntrada" Grid.Row="2"  Grid.Column="1" TextWrapping="Wrap" Text="C:\dotnet\Seguridad.net\Curso\EjerCriptoCSimetrica\Fichero.txt" />
+        <TextBox x:Name="txtEntrada" Grid.Row="2"  Grid.Column="1" TextWrapping="Wrap" Text="..\..\Fichero.txt" />
         <Label Content="Salida"  Grid.Row="3"/>
-        <TextBox x:Name="txtSalida" Grid.Row="3"  Grid.Column="1" TextWrapping="Wrap" Text="C:\dotnet\Seguridad.net\Curso\EjerCriptoCSimetrica\Fichero.bin" />
+        <TextBox x:Name="txtSalida" Grid.Row="3"  Grid.Column="1" TextWrapping="Wrap" Text="..\..\Fichero.bin" />
         <TextBox x:Name="consola" TextWrapping="Wrap" Grid.Row="4" FontSize="14" Grid.ColumnSpan="2" />
         <StackPanel Grid.Column="2" Grid.RowSpan="5">
             <ComboBox x:Name="cbAlgoritmos" SelectedIndex="0">
@@ -40,6 +40,8 @@
             <Button x:Name="btnEncripta" Content="Encripta" Click="BtnEncripta_Click"  />
             <Button Content="Desencrita" Click="BtnDesEncripta_Click"  />
             <Button Content="Renombra" Click="BtnRenombra_Click"  />
+            <Button Content="Guarda" Click="BtnGuarda_Click"  />
+            <Button Content="Recupera" Click="BtnRecupera_Click"  />
         </StackPanel>
     </Grid>
 </Window>

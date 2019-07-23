@@ -22,6 +22,7 @@ namespace EjerCriptoCSimetrica {
         Criptografia srv;
         public MainWindow() {
             InitializeComponent();
+            BtnCrear_Click(null, null);
         }
         private void BtnCrear_Click(object sender, RoutedEventArgs e) {
             var algo = (cbAlgoritmos.SelectedValue as ComboBoxItem).Content.ToString();
@@ -46,8 +47,16 @@ namespace EjerCriptoCSimetrica {
             consola.Text = $"DesEncriptado {txtEntrada.Text} -> {txtSalida.Text}";
         }
         private void BtnRenombra_Click(object sender, RoutedEventArgs e) {
-            txtEntrada.Text = @"C:\dotnet\Seguridad.net\Curso\EjerCriptoCSimetrica\Fichero.bin";
-            txtSalida.Text = @"C:\dotnet\Seguridad.net\Curso\EjerCriptoCSimetrica\Fichero.bin.txt";
+            txtEntrada.Text = @"..\..\Fichero.bin";
+            txtSalida.Text = @"..\..\Fichero.bin.txt";
+        }
+        private void BtnGuarda_Click(object sender, RoutedEventArgs e) {
+            srv.save(@"data.bin");
+        }
+        private void BtnRecupera_Click(object sender, RoutedEventArgs e) {
+            srv.load(@"data.bin");
+            txtClave.Text = Convert.ToBase64String(srv.Key);
+            txtVector.Text = Convert.ToBase64String(srv.IV);
         }
     }
 }

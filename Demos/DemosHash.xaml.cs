@@ -68,11 +68,14 @@ namespace Demos {
             return Convert.ToBase64String(pdb.GetBytes(lenght));
         }
 
-        private byte[] pwd = Encoding.UTF8.GetBytes("P@$$w0rd12345678");
+        private byte[] pwd = Encoding.UTF8.GetBytes("P@$$w0rd");
         public void btnVerPwd(object sender, RoutedEventArgs e) {
             consola.Text = Encoding.UTF8.GetString(pwd);
         }
         public void btnProtectedPwd(object sender, RoutedEventArgs e) {
+            if(pwd.Length % 16 > 0) {
+                Array.Resize<byte>(ref pwd, pwd.Length + (16 - pwd.Length % 16));
+            }
             ProtectedMemory.Protect(pwd, MemoryProtectionScope.SameProcess);
         }
         public void btnDesProtectedPwd(object sender, RoutedEventArgs e) {

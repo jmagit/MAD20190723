@@ -49,24 +49,22 @@ namespace EjerCriptoCSimetrica {
             Encripta(entrada, salida, Key, IV);
         }
         public void Encripta(Stream entrada, Stream salida, byte[] key, byte[] iv) {
-            CryptoStream encStream = new CryptoStream(salida, Algoritmo.CreateEncryptor(), CryptoStreamMode.Write);
-            copyFile(entrada, encStream);
-            salida.Close();
+            // Encripta
+            //CryptoStream encStream = new CryptoStream(salida, Algoritmo.CreateEncryptor(), CryptoStreamMode.Write);
+            //copyFile(entrada, encStream);
+            //salida.Close();
+
+            // Comprime
             //GZipStream comprimido = new GZipStream(salida, CompressionMode.Compress);
             //copyFile(entrada, comprimido);
             //salida.Close();
-            //var ms = new MemoryStream();
-            //GZipStream comprimido = new GZipStream(ms, CompressionMode.Compress);
-            //entrada.CopyTo(comprimido);
-            //ms.Position = 0;
-            //CryptoStream encStream = new CryptoStream(salida, Algoritmo.CreateEncryptor(), CryptoStreamMode.Write);
-            //copyFile(ms, encStream);
-            //salida.Close();
 
-            //using (CryptoStream encStream = new CryptoStream(salida, Algoritmo.CreateEncryptor(), CryptoStreamMode.Write)) {
-            //    GZipStream comprimido = new GZipStream(encStream, CompressionMode.Compress);
-            //    copyFile(entrada, comprimido);
-            //}
+            // Comprime y Encripta
+            using (CryptoStream encStream = new CryptoStream(salida, Algoritmo.CreateEncryptor(), CryptoStreamMode.Write)) {
+                GZipStream comprimido = new GZipStream(encStream, CompressionMode.Compress);
+                copyFile(entrada, comprimido);
+            }
+            salida.Close();
         }
         public void DesEncripta(string entrada, string salida) {
             DesEncripta(
@@ -78,22 +76,22 @@ namespace EjerCriptoCSimetrica {
             DesEncripta(entrada, salida, Key, IV);
         }
         public void DesEncripta(Stream entrada, Stream salida, byte[] key, byte[] iv) {
-            CryptoStream encStream = new CryptoStream(entrada, Algoritmo.CreateDecryptor(), CryptoStreamMode.Read);
-            copyFile(encStream, salida);
-            entrada.Close();
+            // Desencripta
+            //CryptoStream encStream = new CryptoStream(entrada, Algoritmo.CreateDecryptor(), CryptoStreamMode.Read);
+            //copyFile(encStream, salida);
+            //entrada.Close();
+
+            // Descomprime
             //GZipStream comprimido = new GZipStream(entrada, CompressionMode.Decompress);
             //copyFile(comprimido, salida);
-            //var ms = new MemoryStream();
-            //CryptoStream encStream = new CryptoStream(entrada, Algoritmo.CreateDecryptor(), CryptoStreamMode.Read);
-            //encStream.CopyTo(ms);
-            //GZipStream comprimido = new GZipStream(ms, CompressionMode.Decompress);
-            //copyFile(ms, salida);
-            //salida.Close();
-            //using (GZipStream comprimido = new GZipStream(entrada, CompressionMode.Decompress)) {
-            //    CryptoStream encStream = new CryptoStream(comprimido, Algoritmo.CreateDecryptor(), CryptoStreamMode.Read);
-            //    copyFile(encStream, salida);
-            //}
             //entrada.Close();
+
+            // Desencripta y Descomprime
+            using (CryptoStream encStream = new CryptoStream(entrada, Algoritmo.CreateDecryptor(), CryptoStreamMode.Read)) {
+                GZipStream comprimido = new GZipStream(encStream, CompressionMode.Decompress);
+                copyFile(comprimido, salida);
+            }
+            entrada.Close();
         }
 
         private static void copyFile(Stream entrada, Stream salida) {
@@ -109,6 +107,26 @@ namespace EjerCriptoCSimetrica {
             //}
             salida.Close();
             entrada.Close();
+        }
+
+        static byte[] entropy = { 3, 14, 15, 92, 65, 35, 9 };
+        public void save(string salida) {
+            FileStream fStream = new FileStream(salida, FileMode.OpenOrCreate);
+            byte[] buffer = new byte[Key.Length + IV.Length];
+            Key.CopyTo(buffer, 0);
+            IV.CopyTo(buffer, Key.Length);
+            byte[] encryptedData = ProtectedData.Protect(buffer, entropy, DataProtectionScope.CurrentUser);
+            fStream.Write(encryptedData, 0, encryptedData.Length);
+            fStream.Close();
+        }
+        public void load(string entrada) {
+            FileStream fStream = new FileStream(entrada, FileMode.Open);
+            byte[] buffer = new byte[fStream.Length]; 
+            fStream.Read(buffer, 0, (int)fStream.Length);
+            fStream.Close();
+            buffer = ProtectedData.Unprotect(buffer, entropy, DataProtectionScope.CurrentUser);
+            Array.Copy(buffer, Key, Key.Length);
+            Array.Copy(buffer, Key.Length, IV, 0, IV.Length);
         }
     }
 }
