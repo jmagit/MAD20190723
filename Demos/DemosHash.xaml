@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Demos.DemosHash"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demos"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBox x:Name="entrada" TextWrapping="Wrap" Text="Hola mundo" />
+        <TextBox x:Name="consola" TextWrapping="Wrap" Grid.Row="1" FontSize="14" />
+       <StackPanel Grid.Column="1">
+            <Button x:Name="btnAleatorio" Content="Aleatorio" Click="BtnAleatorio_Click" />
+            <ComboBox x:Name="cbAlgoritmos" SelectedIndex="0">
+                <ComboBoxItem Content="MD5" />
+                <ComboBoxItem Content="RIPEMD160" />
+                <ComboBoxItem Content="SHA1" />
+                <ComboBoxItem Content="SHA256" />
+                <ComboBoxItem Content="SHA384" />
+                <ComboBoxItem Content="SHA512" />
+            </ComboBox>
+            <Button x:Name="btnGeneraHash" Content="Genera Hash" Click="BtnGeneraHash_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>

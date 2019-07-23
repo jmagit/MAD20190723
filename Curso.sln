@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demos", "Demos\Demos.csproj", "{60A3CEA7-DD5B-4958-BE8E-C6D336300AB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjerCriptoHash", "EjerCriptoHash\EjerCriptoHash.csproj", "{780BF901-B744-41DC-B754-3A657FA6B268}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60A3CEA7-DD5B-4958-BE8E-C6D336300AB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A3CEA7-DD5B-4958-BE8E-C6D336300AB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A3CEA7-DD5B-4958-BE8E-C6D336300AB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A3CEA7-DD5B-4958-BE8E-C6D336300AB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{780BF901-B744-41DC-B754-3A657FA6B268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{780BF901-B744-41DC-B754-3A657FA6B268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{780BF901-B744-41DC-B754-3A657FA6B268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{780BF901-B744-41DC-B754-3A657FA6B268}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C4D91E5-23E4-4739-BEF0-ABB420F8E653}
+	EndGlobalSection
+EndGlobal
