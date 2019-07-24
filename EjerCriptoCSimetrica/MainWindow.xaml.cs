@@ -52,11 +52,18 @@ namespace EjerCriptoCSimetrica {
         }
         private void BtnGuarda_Click(object sender, RoutedEventArgs e) {
             srv.save(@"data.bin");
+            consola.Text = "Guardado";
         }
         private void BtnRecupera_Click(object sender, RoutedEventArgs e) {
             srv.load(@"data.bin");
             txtClave.Text = Convert.ToBase64String(srv.Key);
             txtVector.Text = Convert.ToBase64String(srv.IV);
+            BtnCrear_Click(null, null);
+            consola.Text = "Recuperado";
+        }
+        private void BtnLimpia_Click(object sender, RoutedEventArgs e) {
+            txtClave.Text = "";
+            txtVector.Text = "";
         }
     }
 }

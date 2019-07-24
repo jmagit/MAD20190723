@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Demos.DemoCAsimetricas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demos"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Content="C.Publica" />
+        <TextBox x:Name="txtCPublica" Grid.Column="1" TextWrapping="Wrap" />
+        <Label Content="C.Completa" Grid.Row="1"/>
+        <TextBox x:Name="txtCCompleta" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" />
+        <Label Content="Entrada"  Grid.Row="2"/>
+        <TextBox x:Name="txtClaro" Grid.Row="2"  Grid.Column="1" TextWrapping="Wrap" />
+        <Label Content="Salida"  Grid.Row="3"/>
+        <TextBox x:Name="txtSalida" Grid.Row="3"  Grid.Column="1" TextWrapping="Wrap" />
+        <Label Content="Store"  Grid.Row="4"/>
+        <TextBox x:Name="txtStore" Grid.Row="4"  Grid.Column="1" TextWrapping="Wrap" />
+        <TextBox x:Name="consola" TextWrapping="Wrap" Grid.Row="9" FontSize="14" Grid.ColumnSpan="2" />
+        <StackPanel Grid.Column="2" Grid.RowSpan="5">
+            <Button Content="Crear" Click="BtnCrear_Click" />
+            <Button x:Name="btnEncripta" Content="Encripta" Click="BtnEncripta_Click"  />
+            <Button Content="Desencrita" Click="BtnDesEncripta_Click" />
+            <Button Content="Firma" Click="BtnFirmar_Click"  />
+            <Button Content="Verifica" Click="BtnVerifica_Click" />
+            <Button Content="Almacena" Click="BtnCreaRecupera_Click"  />
+            <Button Content="Borrar" Click="BtnBorrar_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>

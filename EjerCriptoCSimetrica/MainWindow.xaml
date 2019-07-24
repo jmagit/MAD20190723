@@ -37,10 +37,11 @@
                 <ComboBoxItem Content="TripleDES" />
             </ComboBox>
             <Button Content="Crear" Click="BtnCrear_Click" />
-            <Button x:Name="btnEncripta" Content="Encripta" Click="BtnEncripta_Click"  />
+            <Button x:Name="btnEncripta" Content="Encripta" Click="BtnEncripta_Click" Margin="0,3,0,0"  />
             <Button Content="Desencrita" Click="BtnDesEncripta_Click"  />
-            <Button Content="Renombra" Click="BtnRenombra_Click"  />
-            <Button Content="Guarda" Click="BtnGuarda_Click"  />
+            <Button Content="Renombra" Click="BtnRenombra_Click" Margin="0,2,0,0"  />
+            <Button Content="Limpia" Click="BtnLimpia_Click" Margin="0,2,0,0"  />
+            <Button Content="Guarda" Click="BtnGuarda_Click" Margin="0,2,0,0"  />
             <Button Content="Recupera" Click="BtnRecupera_Click"  />
         </StackPanel>
     </Grid>

@@ -31,6 +31,7 @@ namespace Demos {
 
         public DemosHash() {
             InitializeComponent();
+            Pwd = "P@$$w0rd";
         }
 
         private void BtnAleatorio_Click(object sender, RoutedEventArgs e) {
@@ -56,10 +57,10 @@ namespace Demos {
             }
         }
         private void BtnGeneraPwd_Click(object sender, RoutedEventArgs e) {
-            consola.Text = GetHashPasswordRfc2898(entrada.Text, "Hola") + "\n"; 
-            consola.Text += GetHashPasswordRfc2898(entrada.Text, "Otra") + "\n"; 
-            consola.Text += GetHashPasswordRfc2898(entrada.Text, "Otra", 1000) + "\n"; 
-            consola.Text += GetHashPasswordRfc2898(entrada.Text, "Otra", 1000, 64) + "\n"; 
+            consola.Text = GetHashPasswordRfc2898(entrada.Text, "Hola") + "\n";
+            consola.Text += GetHashPasswordRfc2898(entrada.Text, "Otra") + "\n";
+            consola.Text += GetHashPasswordRfc2898(entrada.Text, "Otra", 1000) + "\n";
+            consola.Text += GetHashPasswordRfc2898(entrada.Text, "Otra", 1000, 64) + "\n";
         }
         public string GetHashPasswordRfc2898(string password, string salt, int iterationCount = 100, int lenght = 32) {
             byte[] pwd = Encoding.UTF8.GetBytes(password);
@@ -68,14 +69,21 @@ namespace Demos {
             return Convert.ToBase64String(pdb.GetBytes(lenght));
         }
 
-        private byte[] pwd = Encoding.UTF8.GetBytes("P@$$w0rd");
+        private byte[] pwd;
+
+        public string Pwd {
+            get => Encoding.UTF8.GetString(pwd);
+            set {
+                pwd = Encoding.UTF8.GetBytes(value);
+                if (pwd.Length % 16 > 0)
+                    Array.Resize<byte>(ref pwd, pwd.Length + (16 - pwd.Length % 16));
+            }
+        }
+
         public void btnVerPwd(object sender, RoutedEventArgs e) {
-            consola.Text = Encoding.UTF8.GetString(pwd);
+            consola.Text = Pwd;
         }
         public void btnProtectedPwd(object sender, RoutedEventArgs e) {
-            if(pwd.Length % 16 > 0) {
-                Array.Resize<byte>(ref pwd, pwd.Length + (16 - pwd.Length % 16));
-            }
             ProtectedMemory.Protect(pwd, MemoryProtectionScope.SameProcess);
         }
         public void btnDesProtectedPwd(object sender, RoutedEventArgs e) {

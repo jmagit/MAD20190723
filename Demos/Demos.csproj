@@ -56,6 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="DemoCAsimetricas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DemoCSimetricas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -71,6 +75,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DemoCAsimetricas.xaml.cs">
+      <DependentUpon>DemoCAsimetricas.xaml</DependentUpon>
     </Compile>
     <Compile Include="DemoCSimetricas.xaml.cs">
       <DependentUpon>DemoCSimetricas.xaml</DependentUpon>
