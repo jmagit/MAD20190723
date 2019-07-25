@@ -43,6 +43,10 @@
             <Button Content="Verifica" Click="BtnVerifica_Click" />
             <Button Content="Almacena" Click="BtnCreaRecupera_Click"  />
             <Button Content="Borrar" Click="BtnBorrar_Click" />
+            <Button Content="Carga Certificado" Click="BtnRecupera_Click" />
+            <Button Content="Borra Certificado" Click="BtnBorraCert_Click" />
+            <Button Content="Añade Certificado" Click="BtnAddCert_Click" />
+            <Button Content="F.Certificado" Click="BtnRecuperaFichero_Click" />
         </StackPanel>
     </Grid>
 </UserControl>
