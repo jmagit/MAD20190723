@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Demos.DemoPKCS"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Demos"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Content="Certificado" />
+        <TextBox x:Name="txtCertificado" Grid.Column="1" TextWrapping="Wrap" Text="DEMO_CURSO"/>
+        <Label Content="Entrada"  Grid.Row="1"/>
+        <TextBox x:Name="txtClaro" Grid.Row="1"  Grid.Column="1" TextWrapping="Wrap" />
+        <Label Content="Etiqueta"  Grid.Row="2"/>
+        <TextBox x:Name="txtEtiqueta" Grid.Row="2"  Grid.Column="1" TextWrapping="Wrap" />
+        <Label Content="Salida"  Grid.Row="3"/>
+        <TextBox x:Name="txtSalida" Grid.Row="3"  Grid.Column="1" TextWrapping="Wrap" />
+        <Label Content="Verificar"  Grid.Row="4"/>
+        <TextBox x:Name="txtVerificar" Grid.Row="4"  Grid.Column="1" TextWrapping="Wrap" />
+        <TextBox x:Name="consola" TextWrapping="Wrap" Grid.Row="9" FontSize="14" Grid.ColumnSpan="2" />
+        <StackPanel Grid.Column="2" Grid.RowSpan="5">
+            <Button Content="Firma" Click="BtnFirma_Click"  />
+            <Button Content="Verifica" Click="BtnVerifica_Click" />
+            <Button Content="Empaqueta" Click="BtnEnvolver_Click" />
+            <Button Content="DesEmpaqueta" Click="BtnDesEnvolver_Click"  />
+
+            <Button Content="Simetrica" Click="BtnSimetrico_Click"  Margin="0,10,0,0" />
+            <Button Content="Asimetrica" Click="BtnASimetrico_Click" />
+            <Button Content="Cetificado" Click="BtnCertificado_Click" />
+            <Button Content="Firma" Click="BtnXMLFirma_Click"  />
+            <Button Content="Verifica" Click="BtnXMLVerifica_Click"  />
+
+        </StackPanel>
+    </Grid>
+</UserControl>

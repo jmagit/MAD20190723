@@ -64,6 +64,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DemoPKCS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DemosHash.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,6 +85,9 @@
     </Compile>
     <Compile Include="DemoCSimetricas.xaml.cs">
       <DependentUpon>DemoCSimetricas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DemoPKCS.xaml.cs">
+      <DependentUpon>DemoPKCS.xaml</DependentUpon>
     </Compile>
     <Compile Include="DemosHash.xaml.cs">
       <DependentUpon>DemosHash.xaml</DependentUpon>
