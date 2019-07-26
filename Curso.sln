@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjerCriptoCSimetrica", "Eje
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjerCriptoAsimetrica", "EjerCriptoAsimetrica\EjerCriptoAsimetrica.csproj", "{BDC79305-4456-4345-963B-7FF769AE1D89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWeb", "DemoWeb\DemoWeb.csproj", "{3FBD8D83-BB4B-4B08-9300-B3A3883F3444}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWebApi", "DemoWebApi\DemoWebApi.csproj", "{312FFF27-A935-47D6-8CCA-3D24239D1ED4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{BDC79305-4456-4345-963B-7FF769AE1D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDC79305-4456-4345-963B-7FF769AE1D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDC79305-4456-4345-963B-7FF769AE1D89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FBD8D83-BB4B-4B08-9300-B3A3883F3444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FBD8D83-BB4B-4B08-9300-B3A3883F3444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FBD8D83-BB4B-4B08-9300-B3A3883F3444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FBD8D83-BB4B-4B08-9300-B3A3883F3444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{312FFF27-A935-47D6-8CCA-3D24239D1ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{312FFF27-A935-47D6-8CCA-3D24239D1ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{312FFF27-A935-47D6-8CCA-3D24239D1ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{312FFF27-A935-47D6-8CCA-3D24239D1ED4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

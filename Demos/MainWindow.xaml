@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="Demos del curso" Height="450" Width="800" WindowState="Maximized">
     <TabControl>
+        <TabItem Header="Simetricos" >
+            <local:DemoCSimetricas />
+        </TabItem>
         <TabItem Header="PKCS" >
             <local:DemoPKCS />
         </TabItem>
         <TabItem Header="Asimetricos" >
             <local:DemoCAsimetricas />
-        </TabItem>
-        <TabItem Header="Simetricos" >
-            <local:DemoCSimetricas />
         </TabItem>
         <TabItem Header="Hash" >
             <local:DemosHash />

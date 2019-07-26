@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Security.Cryptography;
 using System.IO;
+using System.Security.Principal;
+using System.Security.Permissions;
 
 namespace Demos {
     /// <summary>
@@ -24,7 +26,8 @@ namespace Demos {
             InitializeComponent();
         }
 
-        private void BtnCrear_Click(object sender, RoutedEventArgs e) {
+       [PrincipalPermission(SecurityAction.Demand, Role = "Administradores", Authenticated = true)]
+       private void BtnCrear_Click(object sender, RoutedEventArgs e) {
             var algo = (cbAlgoritmos.SelectedValue as ComboBoxItem).Content.ToString();
             using (var algoritmo = SymmetricAlgorithm.Create(algo)) {
                 txtClave.Text = Convert.ToBase64String(algoritmo.Key);
@@ -33,6 +36,7 @@ namespace Demos {
             }
         }
 
+        [PrincipalPermission(SecurityAction.Demand, Role = "Cajero", Authenticated = true)]
         private void BtnEncripta_Click(object sender, RoutedEventArgs e) {
             var algo = (cbAlgoritmos.SelectedValue as ComboBoxItem).Content.ToString();
             using (var algoritmo = SymmetricAlgorithm.Create(algo)) {
@@ -50,6 +54,8 @@ namespace Demos {
                 }
             }
         }
+
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         private void BtnDesEncripta_Click(object sender, RoutedEventArgs e) {
             var algo = (cbAlgoritmos.SelectedValue as ComboBoxItem).Content.ToString();
             using (var algoritmo = SymmetricAlgorithm.Create(algo)) {
@@ -66,5 +72,39 @@ namespace Demos {
                 }
             }
         }
+
+        private void BtnVerUsr_Click(object sender, RoutedEventArgs e) {
+            var id = WindowsIdentity.GetCurrent();
+            var winPrin = new WindowsPrincipal(id);
+
+            consola.Text += id.Name + "\n";
+            consola.Text += id.AuthenticationType + "\n";
+            if(winPrin.IsInRole("BUILTIN\\Administrators"))
+                consola.Text += "Soy Administradores\n";
+            if(winPrin.IsInRole("RRHH"))
+                consola.Text += "Soy de RR.HH\n";
+           if(winPrin.IsInRole("DESKTOP-6LNNCD8\\Alumnos"))
+                consola.Text += "Soy de alumno\n";
+           if(winPrin.IsInRole("Alumnos"))
+                consola.Text += "Soy de alumno\n";
+           if(winPrin.IsInRole("BUILTIN\\Alumnos"))
+                consola.Text += "Soy de alumno\n";
+
+            var gId = new GenericIdentity("Pepito", "El mio");
+            var genPrin = new GenericPrincipal(gId, new string[] { "Administradores", "Cajero" });
+            consola.Text += gId.Name + "\n";
+            consola.Text += gId.AuthenticationType + "\n";
+            if(genPrin.IsInRole("Administradores"))
+                consola.Text += "Soy Administradores\n";
+            if(genPrin.IsInRole("RRHH"))
+                consola.Text += "Soy de RR.HH\n";
+
+
+
+            System.Threading.Thread.CurrentPrincipal = genPrin;
+
+
+        }
+
     }
 }
